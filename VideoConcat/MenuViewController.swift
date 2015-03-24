@@ -52,65 +52,29 @@ class MenuViewController: UIViewController {
         if identifier == "RecordSegue" {
             return true
         }
-        return false
+        return true
     }
     // MARK: - IBActions
     
-    @IBAction func playbackPressed(sender: UIButton!) {
-        startDate = NSDate()
-        var assetList = [AnyObject]()
-        let predicate = NSPredicate(format: "SELF ENDSWITH '.ts'")
-        filteredArray = selectedFileList.filter { predicate!.evaluateWithObject($0) }
-        
-        if 0 == 0 {
-            if filteredArray.count > 0 {
-                for fileName in selectedFileList {
-                    let fileURL = NSURL(fileURLWithPath: fileName)
-                    let mediaAsset = KMMediaAsset.assetWithURL(fileURL, withFormat: .TS) as KMMediaAsset
-                    assetList.append(mediaAsset)
-                }
-            }
-
-            let mp4URL = NSURL(fileURLWithPath: "\(Utilities.applicationSupportDirectory())/Result.mp4")
-            let mp4Asset = KMMediaAsset.assetWithURL(mp4URL, withFormat: .MP4) as KMMediaAsset
-
-            let exportSession = KMMediaAssetExportSession(inputAssets: assetList)
-            exportSession.outputAssets = [mp4Asset]
-            exportSession.exportAsynchronouslyWithCompletionHandler({
-                if exportSession.status == .Completed {
-                    let finalDate = NSDate()
-                    let interval = finalDate.timeIntervalSinceDate(self.startDate)
-                    let alertController = UIAlertController(title: "BOOM", message: "This mp4 was compiled in \(interval) seconds.", preferredStyle: UIAlertControllerStyle.Alert)
-                    let action = UIAlertAction(title: "Let's watch it!", style: UIAlertActionStyle.Default) {(action: UIAlertAction!) -> Void in
-                        let playbackController = MPMoviePlayerViewController(contentURL: mp4URL)
-                        playbackController.moviePlayer.fullscreen = true
-                        self.presentMoviePlayerViewControllerAnimated(playbackController)
-                        playbackController.moviePlayer.play()
-                    }
-                    alertController.addAction(action)
-                    self.presentViewController(alertController, animated: true, completion: nil)
-                } else if exportSession.status == .Failed {
-                    NSLog("Export failed: %@", exportSession.error.localizedDescription)
-                }
-            })
-        } else if 0 == 1 {
-            createManifest(selectedFileList)
-            let error = NSErrorPointer()
-            let success = startServer(error)
-            let fullPath = "http://localhost:8080/Playlist.m3u8"
-            let escapedPath = fullPath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
-            let playlistURL = NSURL(string: escapedPath!)
-            let data = NSData(contentsOfURL: playlistURL!)
-            let asset = AVURLAsset(URL: playlistURL, options: nil)
-            let playerItem = AVPlayerItem(asset: asset)
-            
-            let player = AVPlayer(playerItem: playerItem)
-            
-            let playerController = AVPlayerViewController()
-            playerController.player = player
-            presentViewController(playerController, animated: true, completion: nil)
-        }
-    }
+//    @IBAction func playbackPressed(sender: UIButton!) {
+//                } else if 0 == 1 {
+//            createManifest(selectedFileList)
+//            let error = NSErrorPointer()
+//            let success = startServer(error)
+//            let fullPath = "http://localhost:8080/Playlist.m3u8"
+//            let escapedPath = fullPath.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+//            let playlistURL = NSURL(string: escapedPath!)
+//            let data = NSData(contentsOfURL: playlistURL!)
+//            let asset = AVURLAsset(URL: playlistURL, options: nil)
+//            let playerItem = AVPlayerItem(asset: asset)
+//            
+//            let player = AVPlayer(playerItem: playerItem)
+//            
+//            let playerController = AVPlayerViewController()
+//            playerController.player = player
+//            presentViewController(playerController, animated: true, completion: nil)
+//        }
+//    }
     
     // MARK: - Server functions
     func createManifest(assetList: Array<String>) {

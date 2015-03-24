@@ -1,5 +1,5 @@
 //
-//  SendClipsController.swift
+//  CombineClipsController.swift
 //  VideoConcat
 //
 //  Created by Michael Frain on 3/24/15.
@@ -8,11 +8,11 @@
 
 import UIKit
 import MediaPlayer
-import AVFoundation
-import AVKit
-import Alamofire
 
-class SendClipsController: UIViewController {
+class CombineClipsController: UIViewController {
+    @IBOutlet weak var tableFiles: UITableView!
+    @IBOutlet weak var buttonCombine: UIButton!
+    
     var fileNamesOnlyArray: [String] = []
     var fileList: [String] {
         let error = NSErrorPointer()
@@ -38,12 +38,10 @@ class SendClipsController: UIViewController {
         }
         return finalArray
     }
-    var selectedFileList: [String] = []
-    
-    @IBOutlet weak var tableViewFiles: UITableView!
-    @IBOutlet weak var textServerName: UITextField!
-    @IBOutlet weak var labelConnectionStatus: UILabel!
 
+    var selectedCells: [String] = []
+    var startDate: NSDate!
+    var filteredArray: [String] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -66,24 +64,42 @@ class SendClipsController: UIViewController {
     }
     */
     
-    @IBAction func uploadPressed(sender: UIButton!) {
-        labelConnectionStatus.text = "Status: Connected, sending files"
-        var i = 0
-        let startDate = NSDate()
-        for selectedItem in selectedFileList {
-            Alamofire.upload(.POST, "http://\(textServerName.text)/upload", NSURL(fileURLWithPath: selectedItem)!)
-            .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-                if totalBytesWritten == totalBytesExpectedToWrite {
-                    i++
-                    self.labelConnectionStatus.text = "Status: \(i) of \(self.selectedFileList.count) files written"
-                    if i == self.selectedFileList.count {
-                        let endDate = NSDate()
-                        let interval = endDate.timeIntervalSinceDate(startDate)
-//                        self.labelConnectionStatus.text += " \(interval) seconds"
-                    }
-                }
+    @IBAction func combineTapped(sender: UIButton!) {
+        startDate = NSDate()
+        var assetList = [AnyObject]()
+        let predicate = NSPredicate(format: "SELF ENDSWITH '.ts'")
+        filteredArray = selectedCells.filter { predicate!.evaluateWithObject($0) }
+        
+        if filteredArray.count > 0 {
+            for fileName in selectedCells {
+                let fileURL = NSURL(fileURLWithPath: fileName)
+                let mediaAsset = KMMediaAsset.assetWithURL(fileURL, withFormat: .TS) as KMMediaAsset
+                assetList.append(mediaAsset)
             }
         }
+        
+        let mp4URL = NSURL(fileURLWithPath: "\(Utilities.applicationSupportDirectory())/Result.mp4")
+        let mp4Asset = KMMediaAsset.assetWithURL(mp4URL, withFormat: .MP4) as KMMediaAsset
+        
+        let exportSession = KMMediaAssetExportSession(inputAssets: assetList)
+        exportSession.outputAssets = [mp4Asset]
+        exportSession.exportAsynchronouslyWithCompletionHandler({
+            if exportSession.status == .Completed {
+                let finalDate = NSDate()
+                let interval = finalDate.timeIntervalSinceDate(self.startDate)
+                let alertController = UIAlertController(title: "BOOM", message: "This mp4 was compiled in \(interval) seconds.", preferredStyle: UIAlertControllerStyle.Alert)
+                let action = UIAlertAction(title: "Let's watch it!", style: UIAlertActionStyle.Default) {(action: UIAlertAction!) -> Void in
+                    let playbackController = MPMoviePlayerViewController(contentURL: mp4URL)
+                    playbackController.moviePlayer.fullscreen = true
+                    self.presentMoviePlayerViewControllerAnimated(playbackController)
+                    playbackController.moviePlayer.play()
+                }
+                alertController.addAction(action)
+                self.presentViewController(alertController, animated: true, completion: nil)
+            } else if exportSession.status == .Failed {
+                NSLog("Export failed: %@", exportSession.error.localizedDescription)
+            }
+        })
     }
     
     @IBAction func closeWindow(sender: UIButton!) {
@@ -91,35 +107,28 @@ class SendClipsController: UIViewController {
     }
 }
 
-extension SendClipsController: UITableViewDataSource {
+extension CombineClipsController: UITableViewDataSource {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fileList.count
+        let rows = fileList.count
+        return rows
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("FileListCell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("FileCell") as UITableViewCell
         cell.textLabel!.text = fileList[indexPath.row]
         return cell
     }
 }
 
-extension SendClipsController: UITableViewDelegate {
+extension CombineClipsController: UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        selectedFileList.append(fileList[indexPath.row])
-        NSLog("\(selectedFileList)")
+        selectedCells.append(fileList[indexPath.row])
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        let index = find(selectedFileList, fileList[indexPath.row])
+        let index = find(selectedCells, fileList[indexPath.row])
         if index != nil {
-            selectedFileList.removeAtIndex(index!)
+            selectedCells.removeAtIndex(index!)
         }
-    }
-}
-
-extension SendClipsController: UITextFieldDelegate {
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

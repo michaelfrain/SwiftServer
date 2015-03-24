@@ -11,6 +11,7 @@
 		D34E3EF01ABCB31000AFFAD5 /* libHudlFFmpegProcessor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34E3EEF1ABCB31000AFFAD5 /* libHudlFFmpegProcessor.a */; };
 		D34E3EFD1ABCC9C500AFFAD5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E3EFC1ABCC9C500AFFAD5 /* MenuViewController.swift */; };
 		D34E3EFF1ABCDEC300AFFAD5 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E3EFE1ABCDEC300AFFAD5 /* PlaybackController.swift */; };
+		D3553C551AC1A93D00B74D45 /* CombineClipsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3553C541AC1A93D00B74D45 /* CombineClipsController.swift */; };
 		D3577EA71AC12A5B00B6BC96 /* SendClipsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3577EA61AC12A5B00B6BC96 /* SendClipsController.swift */; };
 		D3577EA91AC1322E00B6BC96 /* ReceiveClipsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3577EA81AC1322E00B6BC96 /* ReceiveClipsController.swift */; };
 		D36718051ABCAF9600C66E92 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D36718041ABCAF9600C66E92 /* libc++.dylib */; };
@@ -44,6 +45,7 @@
 		D34E3EF81ABCB6A400AFFAD5 /* VideoConcat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoConcat-Bridging-Header.h"; sourceTree = "<group>"; };
 		D34E3EFC1ABCC9C500AFFAD5 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		D34E3EFE1ABCDEC300AFFAD5 /* PlaybackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
+		D3553C541AC1A93D00B74D45 /* CombineClipsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombineClipsController.swift; sourceTree = "<group>"; };
 		D3577EA61AC12A5B00B6BC96 /* SendClipsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendClipsController.swift; sourceTree = "<group>"; };
 		D3577EA81AC1322E00B6BC96 /* ReceiveClipsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveClipsController.swift; sourceTree = "<group>"; };
 		D36718041ABCAF9600C66E92 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
@@ -135,6 +137,7 @@
 				D38C7AB51ABF507200370376 /* StreamPlayController.swift */,
 				D3577EA61AC12A5B00B6BC96 /* SendClipsController.swift */,
 				D3577EA81AC1322E00B6BC96 /* ReceiveClipsController.swift */,
+				D3553C541AC1A93D00B74D45 /* CombineClipsController.swift */,
 			);
 			path = VideoConcat;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				D3577EA71AC12A5B00B6BC96 /* SendClipsController.swift in Sources */,
 				D37DDD761ABC719C00BA6582 /* AppDelegate.swift in Sources */,
 				D34E3EFD1ABCC9C500AFFAD5 /* MenuViewController.swift in Sources */,
+				D3553C551AC1A93D00B74D45 /* CombineClipsController.swift in Sources */,
 				D34E3EFF1ABCDEC300AFFAD5 /* PlaybackController.swift in Sources */,
 				D37DDD961ABC726F00BA6582 /* VideoController.swift in Sources */,
 				D3577EA91AC1322E00B6BC96 /* ReceiveClipsController.swift in Sources */,

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Foundation
 
 class ReceiveClipsController: UIViewController {
     @IBOutlet weak var tableClips: UITableView!
@@ -42,9 +43,9 @@ class ReceiveClipsController: UIViewController {
     @IBAction func pullClipList(sender: UIButton!) {
         let startDate = NSDate()
         labelDownloadStatus.text = "Status: Downloading Clips"
-        Alamofire.request(.GET, textServerName.text)
+        Alamofire.request(.GET, "http://\(textServerName.text)/allclips")
             .response { (request, response, data, error) in
-            self.decodedArray = NSKeyedUnarchiver.unarchiveObjectWithData(data) as Array<String>
+            self.decodedArray = NSKeyedUnarchiver.unarchiveObjectWithData(data! as NSData) as Array<String>
             self.tableClips.reloadData()
             let interval = startDate.timeIntervalSinceDate(NSDate()) * -1
             self.labelDownloadStatus.text = "Status: Clips Downloaded in \(interval) seconds"
@@ -55,10 +56,18 @@ class ReceiveClipsController: UIViewController {
         let startDate = NSDate()
         labelDownloadStatus.text = "Status: Preparing video"
         let parameters = ["clips" : indexArray]
-        Alamofire.request(.GET, textServerName.text, parameters: parameters, encoding: .URL)
+        Alamofire.request(.GET, "http://\(textServerName.text)/download", parameters: parameters, encoding: .URL)
             .response { (request, response, data, error) in
-                let clipDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as [String : NSData]
+                let clipDict = NSKeyedUnarchiver.unarchiveObjectWithData(data! as NSData) as [String : NSData]
+                for clipPath in clipDict.keys {
+                    let data = clipDict[clipPath]
+                    data?.writeToFile(clipPath, atomically: true)
+                }
         }
+    }
+    
+    @IBAction func closeWindow(sender: UIButton!) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
