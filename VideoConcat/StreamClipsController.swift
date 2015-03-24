@@ -36,7 +36,8 @@ class StreamClipsController: UIViewController {
             .response { (request, response, data, error) in
                 self.decodedArray = NSKeyedUnarchiver.unarchiveObjectWithData(data! as NSData) as Array<String>
                 let interval = startDate.timeIntervalSinceDate(NSDate())
-                self.labelStatus.text = "Status: \(self.decodedArray.count) clips ready for stream in \(interval) seconds."
+                self.tableStreamClips.reloadData()
+                self.labelStatus.text = "Status: \(self.decodedArray.count) clips ready for stream in \(interval * -1) seconds."
         }
     }
     
@@ -50,7 +51,7 @@ class StreamClipsController: UIViewController {
             manifest += "#EXTINF:8\n"
             let components = fullPath.componentsSeparatedByString("/")
             let manifestPath = components[components.count - 1]
-            manifest += "http://\(textAddress.text)/\(manifestPath)\n"
+            manifest += "\(manifestPath)\n"
         }
         manifest += "EXT-X-ENDLIST"
         let success = manifest.writeToFile("/private\(Utilities.applicationSupportDirectory())/Playlist.m3u8", atomically: false, encoding: NSUTF8StringEncoding, error: nil)
