@@ -7,12 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD7A9D3D42D6C0084517710A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCCB62F1355EB741A6ADEC8 /* libPods.a */; };
+		D34E3EF01ABCB31000AFFAD5 /* libHudlFFmpegProcessor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34E3EEF1ABCB31000AFFAD5 /* libHudlFFmpegProcessor.a */; };
+		D34E3EFD1ABCC9C500AFFAD5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E3EFC1ABCC9C500AFFAD5 /* MenuViewController.swift */; };
+		D34E3EFF1ABCDEC300AFFAD5 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E3EFE1ABCDEC300AFFAD5 /* PlaybackController.swift */; };
+		D3577EA71AC12A5B00B6BC96 /* SendClipsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3577EA61AC12A5B00B6BC96 /* SendClipsController.swift */; };
+		D3577EA91AC1322E00B6BC96 /* ReceiveClipsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3577EA81AC1322E00B6BC96 /* ReceiveClipsController.swift */; };
+		D36718051ABCAF9600C66E92 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D36718041ABCAF9600C66E92 /* libc++.dylib */; };
+		D36718071ABCAFA200C66E92 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D36718061ABCAFA200C66E92 /* libiconv.dylib */; };
+		D36718091ABCAFA900C66E92 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D36718081ABCAFA900C66E92 /* libz.dylib */; };
+		D3773B841AC11738001E8713 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3773B831AC11738001E8713 /* Alamofire.framework */; };
 		D37DDD761ABC719C00BA6582 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DDD751ABC719C00BA6582 /* AppDelegate.swift */; };
-		D37DDD781ABC719C00BA6582 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DDD771ABC719C00BA6582 /* ViewController.swift */; };
 		D37DDD7B1ABC719C00BA6582 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D37DDD791ABC719C00BA6582 /* Main.storyboard */; };
 		D37DDD7D1ABC719C00BA6582 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37DDD7C1ABC719C00BA6582 /* Images.xcassets */; };
 		D37DDD801ABC719C00BA6582 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D37DDD7E1ABC719C00BA6582 /* LaunchScreen.xib */; };
 		D37DDD8C1ABC719C00BA6582 /* VideoConcatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DDD8B1ABC719C00BA6582 /* VideoConcatTests.swift */; };
+		D37DDD961ABC726F00BA6582 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37DDD951ABC726F00BA6582 /* VideoController.swift */; };
+		D38C7AB61ABF507200370376 /* StreamPlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D38C7AB51ABF507200370376 /* StreamPlayController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +37,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EC17213D92E37F7737309E6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6096937C2C8D2FDF21C0576E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		7BCCB62F1355EB741A6ADEC8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D34E3EEF1ABCB31000AFFAD5 /* libHudlFFmpegProcessor.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHudlFFmpegProcessor.a; path = "../../Library/Developer/Xcode/DerivedData/VideoConcat-ctnppshrbefrlcbowfejqaqgnwfw/Build/Products/Debug-iphoneos/libHudlFFmpegProcessor.a"; sourceTree = "<group>"; };
+		D34E3EF81ABCB6A400AFFAD5 /* VideoConcat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoConcat-Bridging-Header.h"; sourceTree = "<group>"; };
+		D34E3EFC1ABCC9C500AFFAD5 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		D34E3EFE1ABCDEC300AFFAD5 /* PlaybackController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
+		D3577EA61AC12A5B00B6BC96 /* SendClipsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendClipsController.swift; sourceTree = "<group>"; };
+		D3577EA81AC1322E00B6BC96 /* ReceiveClipsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiveClipsController.swift; sourceTree = "<group>"; };
+		D36718041ABCAF9600C66E92 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		D36718061ABCAFA200C66E92 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
+		D36718081ABCAFA900C66E92 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D3773B831AC11738001E8713 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D37DDD701ABC719C00BA6582 /* VideoConcat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoConcat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37DDD741ABC719C00BA6582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D37DDD751ABC719C00BA6582 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D37DDD771ABC719C00BA6582 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D37DDD7A1ABC719C00BA6582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D37DDD7C1ABC719C00BA6582 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D37DDD7F1ABC719C00BA6582 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D37DDD851ABC719C00BA6582 /* VideoConcatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoConcatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37DDD8A1ABC719C00BA6582 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D37DDD8B1ABC719C00BA6582 /* VideoConcatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoConcatTests.swift; sourceTree = "<group>"; };
+		D37DDD951ABC726F00BA6582 /* VideoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		D38C7AB51ABF507200370376 /* StreamPlayController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamPlayController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +68,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3773B841AC11738001E8713 /* Alamofire.framework in Frameworks */,
+				D34E3EF01ABCB31000AFFAD5 /* libHudlFFmpegProcessor.a in Frameworks */,
+				D36718091ABCAFA900C66E92 /* libz.dylib in Frameworks */,
+				D36718071ABCAFA200C66E92 /* libiconv.dylib in Frameworks */,
+				D36718051ABCAF9600C66E92 /* libc++.dylib in Frameworks */,
+				CD7A9D3D42D6C0084517710A /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,12 +87,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3916D0C417BAE7AF3984BE87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0EC17213D92E37F7737309E6 /* Pods.debug.xcconfig */,
+				6096937C2C8D2FDF21C0576E /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D37DDD671ABC719C00BA6582 = {
 			isa = PBXGroup;
 			children = (
+				D34E3EEF1ABCB31000AFFAD5 /* libHudlFFmpegProcessor.a */,
+				D36718081ABCAFA900C66E92 /* libz.dylib */,
+				D36718061ABCAFA200C66E92 /* libiconv.dylib */,
+				D36718041ABCAF9600C66E92 /* libc++.dylib */,
 				D37DDD721ABC719C00BA6582 /* VideoConcat */,
 				D37DDD881ABC719C00BA6582 /* VideoConcatTests */,
 				D37DDD711ABC719C00BA6582 /* Products */,
+				3916D0C417BAE7AF3984BE87 /* Pods */,
+				E215979AE89D661141249B96 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,11 +124,17 @@
 			isa = PBXGroup;
 			children = (
 				D37DDD751ABC719C00BA6582 /* AppDelegate.swift */,
-				D37DDD771ABC719C00BA6582 /* ViewController.swift */,
 				D37DDD791ABC719C00BA6582 /* Main.storyboard */,
 				D37DDD7C1ABC719C00BA6582 /* Images.xcassets */,
 				D37DDD7E1ABC719C00BA6582 /* LaunchScreen.xib */,
 				D37DDD731ABC719C00BA6582 /* Supporting Files */,
+				D37DDD951ABC726F00BA6582 /* VideoController.swift */,
+				D34E3EF81ABCB6A400AFFAD5 /* VideoConcat-Bridging-Header.h */,
+				D34E3EFC1ABCC9C500AFFAD5 /* MenuViewController.swift */,
+				D34E3EFE1ABCDEC300AFFAD5 /* PlaybackController.swift */,
+				D38C7AB51ABF507200370376 /* StreamPlayController.swift */,
+				D3577EA61AC12A5B00B6BC96 /* SendClipsController.swift */,
+				D3577EA81AC1322E00B6BC96 /* ReceiveClipsController.swift */,
 			);
 			path = VideoConcat;
 			sourceTree = "<group>";
@@ -112,6 +164,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E215979AE89D661141249B96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D3773B831AC11738001E8713 /* Alamofire.framework */,
+				7BCCB62F1355EB741A6ADEC8 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -119,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D37DDD8F1ABC719C00BA6582 /* Build configuration list for PBXNativeTarget "VideoConcat" */;
 			buildPhases = (
+				A8FBCBCC08F801C94B6B85FC /* Check Pods Manifest.lock */,
 				D37DDD6C1ABC719C00BA6582 /* Sources */,
 				D37DDD6D1ABC719C00BA6582 /* Frameworks */,
 				D37DDD6E1ABC719C00BA6582 /* Resources */,
+				A207F244BFF8268D082CBB49 /* Copy Pods Resources */,
+				D3773B851AC11741001E8713 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -207,13 +271,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A207F244BFF8268D082CBB49 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8FBCBCC08F801C94B6B85FC /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3773B851AC11741001E8713 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D37DDD6C1ABC719C00BA6582 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D37DDD781ABC719C00BA6582 /* ViewController.swift in Sources */,
+				D3577EA71AC12A5B00B6BC96 /* SendClipsController.swift in Sources */,
 				D37DDD761ABC719C00BA6582 /* AppDelegate.swift in Sources */,
+				D34E3EFD1ABCC9C500AFFAD5 /* MenuViewController.swift in Sources */,
+				D34E3EFF1ABCDEC300AFFAD5 /* PlaybackController.swift in Sources */,
+				D37DDD961ABC726F00BA6582 /* VideoController.swift in Sources */,
+				D3577EA91AC1322E00B6BC96 /* ReceiveClipsController.swift in Sources */,
+				D38C7AB61ABF507200370376 /* StreamPlayController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,21 +452,48 @@
 		};
 		D37DDD901ABC719C00BA6582 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EC17213D92E37F7737309E6 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VideoConcat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/michaelfrain/Downloads/iOS-FFmpeg-processor-master/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/VideoConcat-ctnppshrbefrlcbowfejqaqgnwfw/Build/Products/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VideoConcat/VideoConcat-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/**";
 			};
 			name = Debug;
 		};
 		D37DDD911ABC719C00BA6582 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6096937C2C8D2FDF21C0576E /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = VideoConcat/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/michaelfrain/Downloads/iOS-FFmpeg-processor-master/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/VideoConcat-ctnppshrbefrlcbowfejqaqgnwfw/Build/Products/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "VideoConcat/VideoConcat-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/Submodules/**";
 			};
 			name = Release;
 		};
@@ -407,6 +550,7 @@
 				D37DDD911ABC719C00BA6582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D37DDD921ABC719C00BA6582 /* Build configuration list for PBXNativeTarget "VideoConcatTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +559,7 @@
 				D37DDD941ABC719C00BA6582 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

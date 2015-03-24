@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MediaPlayer
 
-class PlaybackController: UIViewController {
-
+class PlaybackController: MPMoviePlayerViewController {
+    var fileURL: NSURL!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

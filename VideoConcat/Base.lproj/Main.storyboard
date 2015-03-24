@@ -1,25 +1,260 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YtS-Ti-zzA">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Menu View Controller-->
+        <scene sceneID="XFg-Nu-IZa">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YtS-Ti-zzA" customClass="MenuViewController" customModule="VideoConcat" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="6Z3-jW-xMy"/>
+                        <viewControllerLayoutGuide type="bottom" id="yqQ-Kj-U9e"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="KRA-5P-HA3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3T-dO-tLu">
+                                <rect key="frame" x="236" y="39" width="119" height="30"/>
+                                <color key="backgroundColor" red="0.91764705879999997" green="0.75615979030000002" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Shoot New Video">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="agS-cW-qcI" kind="show" identifier="Record Segue" id="hpW-2y-8Hh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3W-6s-Nll">
+                                <rect key="frame" x="172" y="106" width="256" height="30"/>
+                                <state key="normal" title="Send Clips To Server (HTTP Request)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Sn5-K3-e8E" kind="show" id="tJy-Fu-sbh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fis-9T-wxi">
+                                <rect key="frame" x="188" y="242" width="224" height="30"/>
+                                <state key="normal" title="Combine clips for local playback">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBx-Po-jpa">
+                                <rect key="frame" x="109" y="172" width="383" height="30"/>
+                                <state key="normal" title="Pull Clips From Server (HTTP Request, iOS Server Only)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="s69-H0-PRf" kind="show" id="hxS-xE-qTy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="buttonCreateVideo" destination="s3T-dO-tLu" id="MD6-Tn-q7t"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XxX-uh-JGD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-194" y="562"/>
+        </scene>
+        <!--Video Controller-->
+        <scene sceneID="91a-gx-HVm">
+            <objects>
+                <viewController id="agS-cW-qcI" customClass="VideoController" customModule="VideoConcat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XzI-e4-4ac"/>
+                        <viewControllerLayoutGuide type="bottom" id="z9r-eS-8XP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="X6S-wJ-nFU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ey6-3W-lIn">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="562"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jml-Z0-tes">
+                                <rect key="frame" x="16" y="571" width="34" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="34" id="Zwy-Ep-taF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oax-lo-jdW">
+                                <rect key="frame" x="554" y="567" width="30" height="30"/>
+                                <state key="normal" title="🔴">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="recordingButtonPressed:" destination="agS-cW-qcI" eventType="touchUpInside" id="bGK-b6-lLK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UqQ-ca-TXf">
+                                <rect key="frame" x="280" y="567" width="40" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonPressed:" destination="agS-cW-qcI" eventType="touchUpInside" id="ebW-67-H1n"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="z9r-eS-8XP" firstAttribute="top" secondItem="UqQ-ca-TXf" secondAttribute="bottom" constant="3" id="1t7-pg-2PN"/>
+                            <constraint firstAttribute="centerX" secondItem="UqQ-ca-TXf" secondAttribute="centerX" id="MK4-ia-K98"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ey6-3W-lIn" secondAttribute="trailing" constant="-16" id="Tea-AV-nwi"/>
+                            <constraint firstItem="Ey6-3W-lIn" firstAttribute="leading" secondItem="X6S-wJ-nFU" secondAttribute="leadingMargin" constant="-16" id="lPq-hl-X8V"/>
+                            <constraint firstItem="jml-Z0-tes" firstAttribute="leading" secondItem="X6S-wJ-nFU" secondAttribute="leadingMargin" id="nLu-d1-ZVz"/>
+                            <constraint firstItem="z9r-eS-8XP" firstAttribute="top" secondItem="oax-lo-jdW" secondAttribute="bottom" constant="3" id="ouv-b8-eyn"/>
+                            <constraint firstItem="oax-lo-jdW" firstAttribute="trailing" secondItem="X6S-wJ-nFU" secondAttribute="trailingMargin" id="sPG-ah-n93"/>
+                            <constraint firstItem="Ey6-3W-lIn" firstAttribute="top" secondItem="XzI-e4-4ac" secondAttribute="bottom" constant="-20" id="sSm-WH-zA4"/>
+                            <constraint firstItem="z9r-eS-8XP" firstAttribute="top" secondItem="Ey6-3W-lIn" secondAttribute="bottom" constant="38" id="t61-fR-h2U"/>
+                            <constraint firstItem="z9r-eS-8XP" firstAttribute="top" secondItem="jml-Z0-tes" secondAttribute="bottom" constant="8" id="wXZ-iL-aRW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnRecord" destination="oax-lo-jdW" id="rQy-0W-5JL"/>
+                        <outlet property="imgVideoViewer" destination="Ey6-3W-lIn" id="ytg-rG-SG6"/>
+                        <outlet property="lblRecordingTime" destination="jml-Z0-tes" id="788-lN-PAo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VyR-eB-Kf0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543" y="550"/>
+        </scene>
+        <!--Send Clips Controller-->
+        <scene sceneID="Ihz-VE-sss">
+            <objects>
+                <viewController id="Sn5-K3-e8E" customClass="SendClipsController" customModule="VideoConcat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DwV-nP-3OM"/>
+                        <viewControllerLayoutGuide type="bottom" id="MYK-TW-nc8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5ng-Ir-LfO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5gP-4m-tHP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="485"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FileListCell" id="8zi-x1-NZi">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8zi-x1-NZi" id="nFO-MC-gLN">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Sn5-K3-e8E" id="iOW-Bz-irK"/>
+                                    <outlet property="delegate" destination="Sn5-K3-e8E" id="vhD-nS-NVG"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address/Hostname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMy-cI-yv1">
+                                <rect key="frame" x="106" y="493" width="388" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Sn5-K3-e8E" id="uTn-fa-Moi"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDK-3x-TXG">
+                                <rect key="frame" x="239" y="531" width="114" height="30"/>
+                                <state key="normal" title="Upload to server">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadPressed:" destination="Sn5-K3-e8E" eventType="touchUpInside" id="Etp-W0-jSh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status: Not connected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAK-Ad-IMW">
+                                <rect key="frame" x="214" y="571" width="173" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelConnectionStatus" destination="fAK-Ad-IMW" id="h6J-F5-a7m"/>
+                        <outlet property="tableViewFiles" destination="5gP-4m-tHP" id="Fv3-Zs-Hiq"/>
+                        <outlet property="textServerName" destination="jMy-cI-yv1" id="1Ov-jt-8ti"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2J-sJ-N41" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543" y="1208"/>
+        </scene>
+        <!--Receive Clips Controller-->
+        <scene sceneID="Q3b-bi-uGQ">
+            <objects>
+                <viewController id="s69-H0-PRf" customClass="ReceiveClipsController" customModule="VideoConcat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CF7-PU-BPg"/>
+                        <viewControllerLayoutGuide type="bottom" id="TOj-CQ-bna"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7IC-2j-yvB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ptb-ty-w8m">
+                                <rect key="frame" x="0.0" y="132" width="600" height="468"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FileCell" id="Usz-PR-Zrk">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Usz-PR-Zrk" id="mGo-Cf-vnH">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Server Name/IP Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-iC-hmt">
+                                <rect key="frame" x="16" y="20" width="287" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status: No clips downloaded" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2k-Bo-AQ1">
+                                <rect key="frame" x="339" y="24" width="245" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17H-mv-I6A">
+                                <rect key="frame" x="16" y="80" width="78" height="30"/>
+                                <state key="normal" title="Pull clip list">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pullClipList:" destination="s69-H0-PRf" eventType="touchUpInside" id="vPA-fe-ht7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA8-do-aDN">
+                                <rect key="frame" x="416" y="80" width="168" height="30"/>
+                                <state key="normal" title="Download and play clips">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelDownloadStatus" destination="z2k-Bo-AQ1" id="VAk-Dh-sH0"/>
+                        <outlet property="tableClips" destination="ptb-ty-w8m" id="k92-no-HFr"/>
+                        <outlet property="textServerName" destination="w1a-iC-hmt" id="GGv-MD-j5g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ItH-AA-K21" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="543" y="1923"/>
         </scene>
     </scenes>
 </document>

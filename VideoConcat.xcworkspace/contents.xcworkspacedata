@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:VideoConcat.xcodeproj">
+      location = "group:Submodules/HudlFFmpeg/HudlFFmpegProcessor.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "container:VideoConcat.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
