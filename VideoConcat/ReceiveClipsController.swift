@@ -43,20 +43,21 @@ class ReceiveClipsController: UIViewController {
         let startDate = NSDate()
         labelDownloadStatus.text = "Status: Downloading Clips"
         Alamofire.request(.GET, textServerName.text)
-//            .response { (request, response, data, error) in
-//            self.decodedArray = NSKeyedUnarchiver.unarchiveObjectWithData(data) as Array<String>
-//            self.tableClips.reloadData()
-//            let interval = startDate.timeIntervalSinceDate(NSDate()) * -1
-//            self.labelDownloadStatus.text = "Status: Clips Downloaded in \(interval) seconds"
-//        }
+            .response { (request, response, data, error) in
+            self.decodedArray = NSKeyedUnarchiver.unarchiveObjectWithData(data) as Array<String>
+            self.tableClips.reloadData()
+            let interval = startDate.timeIntervalSinceDate(NSDate()) * -1
+            self.labelDownloadStatus.text = "Status: Clips Downloaded in \(interval) seconds"
+        }
     }
     
     @IBAction func downloadSelectedClips(sender: UIButton!) {
+        let startDate = NSDate()
+        labelDownloadStatus.text = "Status: Preparing video"
         let parameters = ["clips" : indexArray]
         Alamofire.request(.GET, textServerName.text, parameters: parameters, encoding: .URL)
             .response { (request, response, data, error) in
-                
-                
+                let clipDict = NSKeyedUnarchiver.unarchiveObjectWithData(data) as [String : NSData]
         }
     }
 }

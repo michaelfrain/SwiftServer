@@ -17,7 +17,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3T-dO-tLu">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3W-6s-Nll">
+                                <rect key="frame" x="172" y="106" width="256" height="30"/>
+                                <state key="normal" title="Send Clips To Server (HTTP Request)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Sn5-K3-e8E" kind="show" id="tJy-Fu-sbh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fis-9T-wxi">
+                                <rect key="frame" x="188" y="242" width="224" height="30"/>
+                                <state key="normal" title="Combine clips for local playback">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBx-Po-jpa">
+                                <rect key="frame" x="109" y="172" width="383" height="30"/>
+                                <state key="normal" title="Pull Clips From Server (HTTP Request, iOS Server Only)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="s69-H0-PRf" kind="show" id="hxS-xE-qTy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3T-dO-tLu">
                                 <rect key="frame" x="236" y="39" width="119" height="30"/>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.75615979030000002" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Shoot New Video">
@@ -27,32 +51,18 @@
                                     <segue destination="agS-cW-qcI" kind="show" identifier="Record Segue" id="hpW-2y-8Hh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3W-6s-Nll">
-                                <rect key="frame" x="172" y="106" width="256" height="30"/>
-                                <state key="normal" title="Send Clips To Server (HTTP Request)">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Sn5-K3-e8E" kind="show" id="tJy-Fu-sbh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fis-9T-wxi">
-                                <rect key="frame" x="188" y="242" width="224" height="30"/>
-                                <state key="normal" title="Combine clips for local playback">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBx-Po-jpa">
-                                <rect key="frame" x="109" y="172" width="383" height="30"/>
-                                <state key="normal" title="Pull Clips From Server (HTTP Request, iOS Server Only)">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="s69-H0-PRf" kind="show" id="hxS-xE-qTy"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="MBx-Po-jpa" secondAttribute="centerX" constant="-0.5" id="GRY-w6-ihb"/>
+                            <constraint firstItem="l3W-6s-Nll" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="86" id="IVk-Mi-SKr"/>
+                            <constraint firstAttribute="centerX" secondItem="s3T-dO-tLu" secondAttribute="centerX" constant="4.5" id="Igk-g7-TXd"/>
+                            <constraint firstAttribute="centerX" secondItem="l3W-6s-Nll" secondAttribute="centerX" id="Nzp-iy-o19"/>
+                            <constraint firstItem="fis-9T-wxi" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="222" id="Qpi-mX-rJX"/>
+                            <constraint firstItem="s3T-dO-tLu" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="19" id="kb5-c8-8Ea"/>
+                            <constraint firstAttribute="centerX" secondItem="fis-9T-wxi" secondAttribute="centerX" id="x1Q-Ec-K4T"/>
+                            <constraint firstItem="MBx-Po-jpa" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="152" id="yzX-Al-84I"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="buttonCreateVideo" destination="s3T-dO-tLu" id="MD6-Tn-q7t"/>
@@ -142,7 +152,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5gP-4m-tHP">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="485"/>
+                                <rect key="frame" x="0.0" y="115" width="600" height="485"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FileListCell" id="8zi-x1-NZi">
@@ -157,16 +167,19 @@
                                     <outlet property="delegate" destination="Sn5-K3-e8E" id="vhD-nS-NVG"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address/Hostname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMy-cI-yv1">
-                                <rect key="frame" x="106" y="493" width="388" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address/Hostname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMy-cI-yv1">
+                                <rect key="frame" x="106" y="10" width="388" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="388" id="CYD-u8-5yq"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Sn5-K3-e8E" id="uTn-fa-Moi"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDK-3x-TXG">
-                                <rect key="frame" x="239" y="531" width="114" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KDK-3x-TXG">
+                                <rect key="frame" x="239" y="40" width="114" height="30"/>
                                 <state key="normal" title="Upload to server">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -174,14 +187,25 @@
                                     <action selector="uploadPressed:" destination="Sn5-K3-e8E" eventType="touchUpInside" id="Etp-W0-jSh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status: Not connected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAK-Ad-IMW">
-                                <rect key="frame" x="214" y="571" width="173" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: Not connected" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAK-Ad-IMW">
+                                <rect key="frame" x="214" y="78" width="173" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="173" id="pfK-p0-4Sy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="jMy-cI-yv1" secondAttribute="centerX" id="5Vp-4F-Bqu"/>
+                            <constraint firstAttribute="centerX" secondItem="fAK-Ad-IMW" secondAttribute="centerX" constant="-0.5" id="Umk-uS-p0c"/>
+                            <constraint firstItem="jMy-cI-yv1" firstAttribute="top" secondItem="DwV-nP-3OM" secondAttribute="bottom" constant="-10" id="YbD-HU-it6"/>
+                            <constraint firstItem="fAK-Ad-IMW" firstAttribute="top" secondItem="DwV-nP-3OM" secondAttribute="bottom" constant="58" id="bhN-9b-1ey"/>
+                            <constraint firstAttribute="centerX" secondItem="KDK-3x-TXG" secondAttribute="centerX" constant="4" id="hKl-Nu-KUs"/>
+                            <constraint firstItem="KDK-3x-TXG" firstAttribute="top" secondItem="DwV-nP-3OM" secondAttribute="bottom" constant="20" id="lHP-Ok-AVV"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="labelConnectionStatus" destination="fAK-Ad-IMW" id="h6J-F5-a7m"/>
@@ -191,7 +215,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2J-sJ-N41" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543" y="1208"/>
+            <point key="canvasLocation" x="534" y="1239"/>
         </scene>
         <!--Receive Clips Controller-->
         <scene sceneID="Q3b-bi-uGQ">
@@ -205,7 +229,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ptb-ty-w8m">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ptb-ty-w8m">
                                 <rect key="frame" x="0.0" y="132" width="600" height="468"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -217,18 +241,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Server Name/IP Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-iC-hmt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Server Name/IP Address" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="w1a-iC-hmt">
                                 <rect key="frame" x="16" y="20" width="287" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="mib-LG-Sw8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Status: No clips downloaded" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2k-Bo-AQ1">
-                                <rect key="frame" x="339" y="24" width="245" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status: No clips downloaded" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2k-Bo-AQ1">
+                                <rect key="frame" x="339" y="24" width="245" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="245" id="uSa-DH-c9z"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17H-mv-I6A">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17H-mv-I6A">
                                 <rect key="frame" x="16" y="80" width="78" height="30"/>
                                 <state key="normal" title="Pull clip list">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -237,7 +267,7 @@
                                     <action selector="pullClipList:" destination="s69-H0-PRf" eventType="touchUpInside" id="vPA-fe-ht7"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA8-do-aDN">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aA8-do-aDN">
                                 <rect key="frame" x="416" y="80" width="168" height="30"/>
                                 <state key="normal" title="Download and play clips">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,11 +275,26 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="17H-mv-I6A" firstAttribute="top" secondItem="CF7-PU-BPg" secondAttribute="bottom" constant="60" id="2YW-4L-csg"/>
+                            <constraint firstItem="z2k-Bo-AQ1" firstAttribute="top" secondItem="CF7-PU-BPg" secondAttribute="bottom" constant="4" id="6cN-Iq-qa6"/>
+                            <constraint firstItem="w1a-iC-hmt" firstAttribute="top" secondItem="CF7-PU-BPg" secondAttribute="bottom" id="AlS-nG-7wf"/>
+                            <constraint firstItem="TOj-CQ-bna" firstAttribute="top" secondItem="ptb-ty-w8m" secondAttribute="bottom" id="BQl-Gk-y4g"/>
+                            <constraint firstItem="aA8-do-aDN" firstAttribute="top" secondItem="CF7-PU-BPg" secondAttribute="bottom" constant="60" id="GYX-6G-cZP"/>
+                            <constraint firstItem="17H-mv-I6A" firstAttribute="leading" secondItem="7IC-2j-yvB" secondAttribute="leadingMargin" id="NKy-qG-eYK"/>
+                            <constraint firstItem="ptb-ty-w8m" firstAttribute="leading" secondItem="7IC-2j-yvB" secondAttribute="leadingMargin" constant="-16" id="OqF-TY-OfV"/>
+                            <constraint firstItem="z2k-Bo-AQ1" firstAttribute="trailing" secondItem="7IC-2j-yvB" secondAttribute="trailingMargin" id="WuN-jM-raL"/>
+                            <constraint firstItem="aA8-do-aDN" firstAttribute="trailing" secondItem="7IC-2j-yvB" secondAttribute="trailingMargin" id="bpP-74-d6Y"/>
+                            <constraint firstItem="w1a-iC-hmt" firstAttribute="leading" secondItem="7IC-2j-yvB" secondAttribute="leadingMargin" id="isw-hI-tEO"/>
+                            <constraint firstItem="ptb-ty-w8m" firstAttribute="top" secondItem="CF7-PU-BPg" secondAttribute="bottom" constant="112" id="mND-eH-TUk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ptb-ty-w8m" secondAttribute="trailing" constant="-16" id="vjO-h2-su7"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="labelDownloadStatus" destination="z2k-Bo-AQ1" id="VAk-Dh-sH0"/>
                         <outlet property="tableClips" destination="ptb-ty-w8m" id="k92-no-HFr"/>
                         <outlet property="textServerName" destination="w1a-iC-hmt" id="GGv-MD-j5g"/>
+                        <segue destination="agS-cW-qcI" kind="show" id="9SQ-rE-STX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ItH-AA-K21" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -257,4 +302,7 @@
             <point key="canvasLocation" x="543" y="1923"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9SQ-rE-STX"/>
+    </inferredMetricsTieBreakers>
 </document>
