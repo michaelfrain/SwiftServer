@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CD7A9D3D42D6C0084517710A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCCB62F1355EB741A6ADEC8 /* libPods.a */; };
+		D319DBDC1AC1F4780090387C /* StreamClipsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D319DBDB1AC1F4780090387C /* StreamClipsController.swift */; };
 		D34E3EF01ABCB31000AFFAD5 /* libHudlFFmpegProcessor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D34E3EEF1ABCB31000AFFAD5 /* libHudlFFmpegProcessor.a */; };
 		D34E3EFD1ABCC9C500AFFAD5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E3EFC1ABCC9C500AFFAD5 /* MenuViewController.swift */; };
 		D34E3EFF1ABCDEC300AFFAD5 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34E3EFE1ABCDEC300AFFAD5 /* PlaybackController.swift */; };
@@ -41,6 +42,7 @@
 		0EC17213D92E37F7737309E6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6096937C2C8D2FDF21C0576E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7BCCB62F1355EB741A6ADEC8 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D319DBDB1AC1F4780090387C /* StreamClipsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamClipsController.swift; sourceTree = "<group>"; };
 		D34E3EEF1ABCB31000AFFAD5 /* libHudlFFmpegProcessor.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHudlFFmpegProcessor.a; path = "../../Library/Developer/Xcode/DerivedData/VideoConcat-ctnppshrbefrlcbowfejqaqgnwfw/Build/Products/Debug-iphoneos/libHudlFFmpegProcessor.a"; sourceTree = "<group>"; };
 		D34E3EF81ABCB6A400AFFAD5 /* VideoConcat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VideoConcat-Bridging-Header.h"; sourceTree = "<group>"; };
 		D34E3EFC1ABCC9C500AFFAD5 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				D3577EA61AC12A5B00B6BC96 /* SendClipsController.swift */,
 				D3577EA81AC1322E00B6BC96 /* ReceiveClipsController.swift */,
 				D3553C541AC1A93D00B74D45 /* CombineClipsController.swift */,
+				D319DBDB1AC1F4780090387C /* StreamClipsController.swift */,
 			);
 			path = VideoConcat;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				D34E3EFF1ABCDEC300AFFAD5 /* PlaybackController.swift in Sources */,
 				D37DDD961ABC726F00BA6582 /* VideoController.swift in Sources */,
 				D3577EA91AC1322E00B6BC96 /* ReceiveClipsController.swift in Sources */,
+				D319DBDC1AC1F4780090387C /* StreamClipsController.swift in Sources */,
 				D38C7AB61ABF507200370376 /* StreamPlayController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

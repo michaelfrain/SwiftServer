@@ -98,7 +98,9 @@ extension SendClipsController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FileListCell") as UITableViewCell
-        cell.textLabel!.text = fileList[indexPath.row]
+        let fullPath = fileList[indexPath.row]
+        let components = fullPath.componentsSeparatedByString("/")
+        cell.textLabel!.text = components[components.count - 1]
         return cell
     }
 }

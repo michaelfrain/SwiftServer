@@ -79,7 +79,9 @@ extension ReceiveClipsController: UITableViewDataSource {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FileCell") as UITableViewCell
-        cell.textLabel!.text = decodedArray[indexPath.row]
+        let fullPath = decodedArray[indexPath.row]
+        let components = fullPath.componentsSeparatedByString("/")
+        cell.textLabel!.text = components[components.count - 1]
         return cell
     }
 }
@@ -94,5 +96,12 @@ extension ReceiveClipsController: UITableViewDelegate {
         if index != nil {
             indexArray.removeAtIndex(index!)
         }
+    }
+}
+
+extension ReceiveClipsController: UITextFieldDelegate {
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
