@@ -1,0 +1,7 @@
+#include "Pods-VideoConcat-GPAC4iOS.xcconfig"
+CLANG_ENABLE_MODULES = ${PODS_VIDEOCONCAT_GPAC_IOS_CLANG_ENABLE_MODULES}
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/GPAC4iOS" "${PODS_ROOT}/Headers/Private/GPAC4iOS/gpac" "${PODS_ROOT}/Headers/Private/GPAC4iOS/gpac/internal" "${PODS_ROOT}/Headers/Private/GPAC4iOS/gpac/modules" "${PODS_ROOT}/Headers/Private/src/bifs" "${PODS_ROOT}/Headers/Private/src/media_tools" "${PODS_ROOT}/Headers/Private/src/terminal" "${PODS_ROOT}/Headers/Private/src/utils" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CocoaAsyncSocket" "${PODS_ROOT}/Headers/Public/CocoaHTTPServer" "${PODS_ROOT}/Headers/Public/CocoaLumberjack" "${PODS_ROOT}/Headers/Public/GPAC4iOS" "${PODS_ROOT}/Headers/Public/GPAC4iOS/gpac" "${PODS_ROOT}/Headers/Public/GPAC4iOS/gpac/internal" "${PODS_ROOT}/Headers/Public/GPAC4iOS/gpac/modules" "${PODS_ROOT}/Headers/Public/TS2MP4" "${PODS_ROOT}/Headers/Public/src/bifs" "${PODS_ROOT}/Headers/Public/src/media_tools" "${PODS_ROOT}/Headers/Public/src/terminal" "${PODS_ROOT}/Headers/Public/src/utils"
+OTHER_LDFLAGS = -ObjC
+PODS_ROOT = ${SRCROOT}
+SKIP_INSTALL = YES

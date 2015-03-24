@@ -1,0 +1,29 @@
+PODS:
+  - CocoaAsyncSocket (7.4.1)
+  - CocoaHTTPServer (2.3):
+    - CocoaAsyncSocket
+    - CocoaLumberjack
+  - CocoaLumberjack (2.0.0):
+    - CocoaLumberjack/Default (= 2.0.0)
+    - CocoaLumberjack/Extensions (= 2.0.0)
+  - CocoaLumberjack/Core (2.0.0)
+  - CocoaLumberjack/Default (2.0.0):
+    - CocoaLumberjack/Core
+  - CocoaLumberjack/Extensions (2.0.0):
+    - CocoaLumberjack/Default
+  - GPAC4iOS (0.2.1)
+  - TS2MP4 (0.2.1):
+    - GPAC4iOS (= 0.2.1)
+
+DEPENDENCIES:
+  - CocoaHTTPServer
+  - TS2MP4
+
+SPEC CHECKSUMS:
+  CocoaAsyncSocket: b0a1a89e7ea4c1c0ea4ec83f57d55117d3cdae06
+  CocoaHTTPServer: 217df4cba4e48803db2480f97b805aaad2230dd1
+  CocoaLumberjack: fd2b1031c6c4e0f08b5ea928ef677fa0a5de517d
+  GPAC4iOS: fade1dfb45b54fda055e0c23fc30fa8a48ed8a2a
+  TS2MP4: 6d7f9752324ce46459c3d6fc2ec8b4c1affc732e
+
+COCOAPODS: 0.36.0
