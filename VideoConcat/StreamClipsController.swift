@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import AVKit
+import AVFoundation
 
 class StreamClipsController: UIViewController {
     @IBOutlet weak var buttonStream: UIButton!
@@ -21,6 +22,14 @@ class StreamClipsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func fetchClips(sender: UIButton!) {
         let startDate = NSDate()
         labelStatus.text = "Status: retrieving available clips"
         Alamofire.request(.GET, "http://\(textAddress.text)/allclips")
@@ -30,13 +39,8 @@ class StreamClipsController: UIViewController {
                 self.labelStatus.text = "Status: \(self.decodedArray.count) clips ready for stream in \(interval) seconds."
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
-    func createManifest() {
+    @IBAction func createManifest() {
         var manifest = ""
         manifest += "#EXTM3U\n"
         manifest += "#EXT-X-VERSION:3\n"
@@ -52,6 +56,11 @@ class StreamClipsController: UIViewController {
         let success = manifest.writeToFile("/private\(Utilities.applicationSupportDirectory())/Playlist.m3u8", atomically: false, encoding: NSUTF8StringEncoding, error: nil)
         if success {
             let viewer = AVPlayerViewController()
+            let manifestURL = NSURL(fileURLWithPath: "/private\(Utilities.applicationSupportDirectory())/Playlist.m3u8")
+            let playerItem = AVPlayerItem(URL: manifestURL)
+            let player = AVPlayer(playerItem: playerItem)
+            viewer.player = player
+            presentViewController(viewer, animated: true, completion: nil)
         }
     }
 

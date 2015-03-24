@@ -59,6 +59,9 @@
                                 <state key="normal" title="Stream clips from server">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="LNM-Ky-hv0" kind="show" id="AoQ-Di-N8V"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -420,7 +423,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="12X-5T-cDN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="12X-5T-cDN">
                                 <rect key="frame" x="0.0" y="107" width="600" height="493"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -437,15 +440,18 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwu-Rz-qIk">
-                                <rect key="frame" x="16" y="69" width="86" height="30"/>
+                                <rect key="frame" x="16" y="35" width="86" height="30"/>
                                 <state key="normal" title="Stream clips">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="fetchClips:" destination="LNM-Ky-hv0" eventType="touchUpInside" id="Mfl-3B-0oT"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="IP Address/Server" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F3K-TS-Vel">
-                                <rect key="frame" x="163" y="69" width="274" height="30"/>
+                                <rect key="frame" x="185" y="69" width="230" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="274" id="KUB-rw-pa4"/>
+                                    <constraint firstAttribute="width" constant="230" id="KUB-rw-pa4"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -454,7 +460,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIz-SF-ZfI">
-                                <rect key="frame" x="544" y="70" width="40" height="30"/>
+                                <rect key="frame" x="544" y="33" width="40" height="30"/>
                                 <state key="normal" title="Close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -468,16 +474,32 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUh-QM-SqO">
+                                <rect key="frame" x="16" y="68" width="85" height="30"/>
+                                <state key="normal" title="Start stream">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="createManifest" destination="LNM-Ky-hv0" eventType="touchUpInside" id="tGj-hG-M7O"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FUh-QM-SqO" firstAttribute="leading" secondItem="MEd-2z-kTO" secondAttribute="leadingMargin" id="0cR-sV-isf"/>
                             <constraint firstItem="pdB-ww-7CL" firstAttribute="top" secondItem="a61-wm-uDs" secondAttribute="bottom" constant="20" id="57N-LW-SSn"/>
-                            <constraint firstItem="dIz-SF-ZfI" firstAttribute="top" secondItem="a61-wm-uDs" secondAttribute="bottom" constant="50" id="5NC-15-O3I"/>
-                            <constraint firstItem="iwu-Rz-qIk" firstAttribute="top" secondItem="a61-wm-uDs" secondAttribute="bottom" constant="49" id="IfQ-Vp-YMg"/>
+                            <constraint firstItem="dIz-SF-ZfI" firstAttribute="top" secondItem="a61-wm-uDs" secondAttribute="bottom" constant="13" id="5NC-15-O3I"/>
+                            <constraint firstItem="12X-5T-cDN" firstAttribute="top" secondItem="FUh-QM-SqO" secondAttribute="bottom" constant="9" id="Buw-ue-Hgh"/>
+                            <constraint firstItem="iwu-Rz-qIk" firstAttribute="top" secondItem="a61-wm-uDs" secondAttribute="bottom" constant="15" id="IfQ-Vp-YMg"/>
+                            <constraint firstItem="12X-5T-cDN" firstAttribute="leading" secondItem="MEd-2z-kTO" secondAttribute="leadingMargin" constant="-16" id="W98-ak-sLG"/>
                             <constraint firstItem="dIz-SF-ZfI" firstAttribute="trailing" secondItem="MEd-2z-kTO" secondAttribute="trailingMargin" id="aSt-4o-F5Q"/>
                             <constraint firstItem="F3K-TS-Vel" firstAttribute="top" secondItem="a61-wm-uDs" secondAttribute="bottom" constant="49" id="bLi-RD-Bjm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="12X-5T-cDN" secondAttribute="trailing" constant="-16" id="dEn-Jq-DHw"/>
                             <constraint firstAttribute="centerX" secondItem="pdB-ww-7CL" secondAttribute="centerX" constant="-0.5" id="fEg-57-toD"/>
+                            <constraint firstItem="d6K-ke-C6p" firstAttribute="top" secondItem="12X-5T-cDN" secondAttribute="bottom" id="iAw-j5-Uya"/>
+                            <constraint firstItem="12X-5T-cDN" firstAttribute="top" secondItem="a61-wm-uDs" secondAttribute="bottom" constant="87" id="nFS-Ho-t8l"/>
                             <constraint firstAttribute="centerX" secondItem="F3K-TS-Vel" secondAttribute="centerX" id="nKb-ZE-9Os"/>
+                            <constraint firstItem="iwu-Rz-qIk" firstAttribute="leading" secondItem="MEd-2z-kTO" secondAttribute="leadingMargin" id="tEX-IN-sl1"/>
                             <constraint firstItem="iwu-Rz-qIk" firstAttribute="leading" secondItem="MEd-2z-kTO" secondAttribute="leadingMargin" id="xgy-EF-4Bw"/>
                         </constraints>
                     </view>
