@@ -64,6 +64,10 @@ class StreamClipsController: UIViewController {
             presentViewController(viewer, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func closeWindow(sender: UIButton!) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
