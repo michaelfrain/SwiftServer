@@ -211,7 +211,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1c-uW-izw">
-                                <rect key="frame" x="538" y="102" width="40" height="30"/>
+                                <rect key="frame" x="538" y="70" width="40" height="30"/>
                                 <state key="normal" title="Close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -228,7 +228,7 @@
                             <constraint firstAttribute="centerX" secondItem="fAK-Ad-IMW" secondAttribute="centerX" constant="-0.5" id="Umk-uS-p0c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5gP-4m-tHP" secondAttribute="trailing" constant="-16" id="Xws-1K-g1O"/>
                             <constraint firstItem="jMy-cI-yv1" firstAttribute="top" secondItem="DwV-nP-3OM" secondAttribute="bottom" constant="10" id="YbD-HU-it6"/>
-                            <constraint firstItem="5gP-4m-tHP" firstAttribute="top" secondItem="d1c-uW-izw" secondAttribute="bottom" constant="8" id="aT1-9x-SRF"/>
+                            <constraint firstItem="5gP-4m-tHP" firstAttribute="top" secondItem="d1c-uW-izw" secondAttribute="bottom" constant="40" id="aT1-9x-SRF"/>
                             <constraint firstItem="fAK-Ad-IMW" firstAttribute="top" secondItem="DwV-nP-3OM" secondAttribute="bottom" constant="88" id="bhN-9b-1ey"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d1c-uW-izw" secondAttribute="trailing" constant="6" id="hFW-Ap-hyj"/>
                             <constraint firstAttribute="centerX" secondItem="KDK-3x-TXG" secondAttribute="centerX" constant="4" id="hKl-Nu-KUs"/>

@@ -75,11 +75,10 @@ class SendClipsController: UIViewController {
             .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
                 if totalBytesWritten == totalBytesExpectedToWrite {
                     i++
-                    self.labelConnectionStatus.text = "Status: \(i) of \(self.selectedFileList.count) files written"
                     if i == self.selectedFileList.count {
                         let endDate = NSDate()
                         let interval = endDate.timeIntervalSinceDate(startDate)
-//                        self.labelConnectionStatus.text += " \(interval) seconds"
+                        self.labelConnectionStatus.text = "Status: \(i) files took \(interval) secs"
                     }
                 }
             }
