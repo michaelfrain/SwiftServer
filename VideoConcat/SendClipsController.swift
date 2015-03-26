@@ -21,7 +21,7 @@ class SendClipsController: UIViewController {
         let docArray = NSFileManager.defaultManager().contentsOfDirectoryAtPath(docDirectory, error: error) as [String]
         
         for secondDocDirectory in docArray {
-            if secondDocDirectory != "Result.mp4" && secondDocDirectory != "Playlist.m3u8" {
+            if secondDocDirectory != "Result.mp4" && secondDocDirectory != "Playlist.m3u8" && secondDocDirectory != "stream.m3u8" {
                 let fullDirectory = "\(docDirectory)/\(secondDocDirectory)"
                 let secondDocArray = NSFileManager.defaultManager().contentsOfDirectoryAtPath(fullDirectory, error: error) as [String]
                 for finalDocDirectory in secondDocArray {

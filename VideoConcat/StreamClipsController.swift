@@ -19,6 +19,7 @@ class StreamClipsController: UIViewController {
     @IBOutlet weak var labelStatus: UILabel!
     
     var decodedArray: Array<String> = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,37 +33,23 @@ class StreamClipsController: UIViewController {
     @IBAction func fetchClips(sender: UIButton!) {
         let startDate = NSDate()
         labelStatus.text = "Status: retrieving available clips"
-        Alamofire.request(.GET, "http://\(textAddress.text)/allclips")
+        Alamofire.request(.GET, "http://\(textAddress.text)/stream")
             .response { (request, response, data, error) in
-                self.decodedArray = NSKeyedUnarchiver.unarchiveObjectWithData(data! as NSData) as Array<String>
+                let playlistData = data as NSData
+                let string = NSString(data: playlistData, encoding: NSUTF8StringEncoding)
+                playlistData.writeToFile("\(Utilities.applicationSupportDirectory())/stream.m3u8", atomically: true)
                 let interval = startDate.timeIntervalSinceDate(NSDate())
-                self.tableStreamClips.reloadData()
-                self.labelStatus.text = "Status: \(self.decodedArray.count) clips ready for stream in \(interval * -1) seconds."
+                self.labelStatus.text = "Status: \(self.decodedArray.count) playlist of stream ready in \(interval * -1) seconds."
+                let viewer = AVPlayerViewController()
+                let playerItem = AVPlayerItem(URL: NSURL(fileURLWithPath: "\(Utilities.applicationSupportDirectory())/stream.m3u8"))
+                let player = AVPlayer(playerItem: playerItem)
+                viewer.player = player
+                self.presentViewController(viewer, animated: true, completion: nil)
         }
     }
     
     @IBAction func createManifest() {
-        var manifest = ""
-        manifest += "#EXTM3U\n"
-        manifest += "#EXT-X-VERSION:3\n"
-        manifest += "#EXT-X-TARGETDURATION:9\n"
-        manifest += "#EXT-X-MEDIA-SEQUENCE:0\n"
-        for fullPath in decodedArray {
-            manifest += "#EXTINF:8\n"
-            let components = fullPath.componentsSeparatedByString("/")
-            let manifestPath = components[components.count - 1]
-            manifest += "\(manifestPath)\n"
-        }
-        manifest += "EXT-X-ENDLIST"
-        let success = manifest.writeToFile("/private\(Utilities.applicationSupportDirectory())/Playlist.m3u8", atomically: false, encoding: NSUTF8StringEncoding, error: nil)
-        if success {
-            let viewer = AVPlayerViewController()
-            let manifestURL = NSURL(fileURLWithPath: "/private\(Utilities.applicationSupportDirectory())/Playlist.m3u8")
-            let playerItem = AVPlayerItem(URL: manifestURL)
-            let player = AVPlayer(playerItem: playerItem)
-            viewer.player = player
-            presentViewController(viewer, animated: true, completion: nil)
-        }
+        
     }
     
     @IBAction func closeWindow(sender: UIButton!) {

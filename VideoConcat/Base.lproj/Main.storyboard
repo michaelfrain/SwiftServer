@@ -18,8 +18,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l3W-6s-Nll">
-                                <rect key="frame" x="172" y="106" width="256" height="30"/>
-                                <state key="normal" title="Send Clips To Server (HTTP Request)">
+                                <rect key="frame" x="205" y="99" width="190" height="30"/>
+                                <state key="normal" title="Step 2: Send clips to server">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MBx-Po-jpa">
-                                <rect key="frame" x="109" y="172" width="383" height="30"/>
+                                <rect key="frame" x="109" y="300" width="383" height="30"/>
                                 <state key="normal" title="Pull Clips From Server (HTTP Request, iOS Server Only)">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -45,9 +45,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3T-dO-tLu">
-                                <rect key="frame" x="236" y="39" width="119" height="30"/>
+                                <rect key="frame" x="226" y="39" width="138" height="30"/>
                                 <color key="backgroundColor" red="0.91764705879999997" green="0.75615979030000002" blue="0.34509803919999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Shoot New Video">
+                                <state key="normal" title="Step 1: Shoot Video">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -55,8 +55,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-Ah-ZcZ">
-                                <rect key="frame" x="217" y="307" width="167" height="30"/>
-                                <state key="normal" title="Stream clips from server">
+                                <rect key="frame" x="187" y="157" width="226" height="30"/>
+                                <state key="normal" title="Step 3: Stream Clips from Server">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -67,15 +67,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="MBx-Po-jpa" secondAttribute="centerX" constant="-0.5" id="GRY-w6-ihb"/>
-                            <constraint firstItem="l3W-6s-Nll" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="86" id="IVk-Mi-SKr"/>
+                            <constraint firstItem="l3W-6s-Nll" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="79" id="IVk-Mi-SKr"/>
                             <constraint firstAttribute="centerX" secondItem="s3T-dO-tLu" secondAttribute="centerX" constant="4.5" id="Igk-g7-TXd"/>
                             <constraint firstAttribute="centerX" secondItem="l3W-6s-Nll" secondAttribute="centerX" id="Nzp-iy-o19"/>
                             <constraint firstItem="fis-9T-wxi" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="222" id="Qpi-mX-rJX"/>
                             <constraint firstAttribute="centerX" secondItem="fVS-Ah-ZcZ" secondAttribute="centerX" constant="-0.5" id="Zk1-6D-278"/>
-                            <constraint firstItem="fVS-Ah-ZcZ" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="287" id="ikc-gG-stg"/>
+                            <constraint firstItem="fVS-Ah-ZcZ" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="137" id="ikc-gG-stg"/>
                             <constraint firstItem="s3T-dO-tLu" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="19" id="kb5-c8-8Ea"/>
                             <constraint firstAttribute="centerX" secondItem="fis-9T-wxi" secondAttribute="centerX" id="x1Q-Ec-K4T"/>
-                            <constraint firstItem="MBx-Po-jpa" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="152" id="yzX-Al-84I"/>
+                            <constraint firstItem="MBx-Po-jpa" firstAttribute="top" secondItem="6Z3-jW-xMy" secondAttribute="bottom" constant="280" id="yzX-Al-84I"/>
                         </constraints>
                     </view>
                     <connections>
@@ -524,6 +524,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9SQ-rE-STX"/>
+        <segue reference="hpW-2y-8Hh"/>
     </inferredMetricsTieBreakers>
 </document>
